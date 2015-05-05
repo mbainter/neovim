@@ -1789,7 +1789,7 @@ char_u *path_shorten_fname_if_possible(char_u *full_path)
 
   if (os_dirname(dirname, MAXPATHL) == OK) {
     p = path_shorten_fname(full_path, dirname);
-    if (p == NULL || *p == NUL) {
+    if (is_empty((char *)p)) {
       p = full_path;
     }
   }
